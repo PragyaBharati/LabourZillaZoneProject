@@ -1,0 +1,114 @@
+﻿@model LabourZillaZone12.Models.labour
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>labour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profession)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profession)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CityAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DailyWages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DailyWages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirm_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confirm_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LPic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LPic)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

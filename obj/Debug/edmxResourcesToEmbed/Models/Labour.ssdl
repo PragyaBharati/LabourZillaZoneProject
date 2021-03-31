@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LabourZillaZoneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LabourZillaZone.dbo.AdminLabourZilla' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AdminLabourZilla">
+    <Key>
+      <PropertyRef Name="LoginId" />
+      <PropertyRef Name="APassword" />
+    </Key>
+    <Property Name="LoginId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="APassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="labour">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Profession" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="StateL" Type="nvarchar" MaxLength="50" />
+    <Property Name="DailyWages" Type="int" />
+    <Property Name="TimeDate" Type="datetime" />
+    <Property Name="Available" Type="nvarchar" MaxLength="20" />
+    <Property Name="LContact" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PasswordC" Type="nvarchar" MaxLength="100" />
+    <Property Name="Confirm_password" Type="nvarchar" MaxLength="100" />
+    <Property Name="LPic" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LabourZillaZone.dbo.Test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="TName" />
+      <PropertyRef Name="Temail" />
+      <PropertyRef Name="TprojectName" />
+    </Key>
+    <Property Name="TName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Temail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TprojectName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LabourZillaZone.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="LContact" />
+    </Key>
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="StateC" Type="nvarchar" MaxLength="50" />
+    <Property Name="LContact" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PasswordC" Type="nvarchar" MaxLength="100" />
+    <Property Name="Confirm_password" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LabourZillaZone.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="LabourZillaZoneModelStoreContainer">
+    <EntitySet Name="labour" EntityType="Self.labour" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminLabourZilla" EntityType="Self.AdminLabourZilla" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AdminLabourZilla].[LoginId] AS [LoginId], 
+    [AdminLabourZilla].[APassword] AS [APassword]
+    FROM [dbo].[AdminLabourZilla] AS [AdminLabourZilla]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Test" EntityType="Self.Test" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Test].[TName] AS [TName], 
+    [Test].[Temail] AS [Temail], 
+    [Test].[TprojectName] AS [TprojectName], 
+    [Test].[TDate] AS [TDate]
+    FROM [dbo].[Test] AS [Test]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Users].[FirstName] AS [FirstName], 
+    [Users].[LastName] AS [LastName], 
+    [Users].[CityAddress] AS [CityAddress], 
+    [Users].[StateC] AS [StateC], 
+    [Users].[LContact] AS [LContact], 
+    [Users].[PasswordC] AS [PasswordC], 
+    [Users].[Confirm_password] AS [Confirm_password]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+      <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

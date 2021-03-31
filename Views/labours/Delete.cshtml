@@ -1,0 +1,120 @@
+﻿@model LabourZillaZone12.Models.labour
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>labour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profession)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profession)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CityAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DailyWages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DailyWages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirm_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confirm_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LPic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LPic)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

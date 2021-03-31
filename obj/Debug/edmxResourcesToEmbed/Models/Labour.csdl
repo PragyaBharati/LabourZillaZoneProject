@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LabourZillaZoneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="labour">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Profession" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StateL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DailyWages" Type="Int32" />
+    <Property Name="TimeDate" Type="DateTime" Precision="3" />
+    <Property Name="Available" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LContact" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PasswordC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Confirm_password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LPic" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AdminLabourZilla">
+    <Key>
+      <PropertyRef Name="LoginId" />
+      <PropertyRef Name="APassword" />
+    </Key>
+    <Property Name="LoginId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="APassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="TName" />
+      <PropertyRef Name="Temail" />
+      <PropertyRef Name="TprojectName" />
+    </Key>
+    <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Temail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TprojectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="LContact" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StateC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LContact" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PasswordC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Confirm_password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="LabourZillaZoneEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="labours" EntityType="Self.labour" />
+    <EntitySet Name="AdminLabourZillas" EntityType="Self.AdminLabourZilla" />
+    <EntitySet Name="Tests" EntityType="Self.Test" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+  </EntityContainer>
+</Schema>
